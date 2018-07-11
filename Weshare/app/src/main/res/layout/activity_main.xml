@@ -11,6 +11,7 @@
         android:layout_height="60dp">
 
         <ImageView
+            android:id="@+id/imageViewPersonal"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_margin="5dp"
@@ -31,7 +32,7 @@
             android:layout_height="30dp"
             android:layout_margin="5dp"
             android:layout_gravity="center_vertical"
-            android:src="@mipmap/edit"/>
+            android:src="@mipmap/map"/>
     </LinearLayout>
 
     <view
