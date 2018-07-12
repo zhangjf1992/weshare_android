@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.wetwo.weshare.MainActivity">
+    tools:context="com.wetwo.weshare.home.view.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,6 +28,7 @@
             android:textSize="18sp"/>
 
         <ImageView
+            android:id="@+id/imageViewMap"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_margin="5dp"
@@ -40,12 +41,11 @@
         android:layout_height="0.01dp"
         android:background="@android:color/darker_gray"/>
 
-    <ListView
-        android:id="@+id/listViewInformation"
+    <FrameLayout
+        android:id="@+id/framLayoutInfo"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </ListView>
-
+    </FrameLayout>
 
 </LinearLayout>
