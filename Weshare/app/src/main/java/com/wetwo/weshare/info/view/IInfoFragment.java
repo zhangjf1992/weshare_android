@@ -5,4 +5,5 @@ package com.wetwo.weshare.info.view;
  */
 
 public interface IInfoFragment {
+    boolean isActive();
 }
