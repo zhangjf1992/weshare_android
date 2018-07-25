@@ -17,8 +17,6 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.imageViewPersonal)
-    ImageView imageViewPersonal;
     @BindView(R.id.imageViewSwitch)
     ImageView imageViewSwitch;
     @BindView(R.id.framLayoutInfo)
@@ -39,15 +37,5 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager=getFragmentManager();
         fragmentTransaction=fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.framLayoutInfo,new InfoFragment(),"infoFragment").commit();
-    }
-
-    @OnClick({R.id.imageViewPersonal, R.id.imageViewSwitch})
-    public void onViewClicked(View view) {
-        switch (view.getId()) {
-            case R.id.imageViewPersonal:
-                break;
-            case R.id.imageViewSwitch:
-                break;
-        }
     }
 }
