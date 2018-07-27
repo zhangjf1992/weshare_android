@@ -1,7 +1,6 @@
-package com.wetwo.weshare.info.view;
+package com.wetwo.weshare.message.view;
 
 import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -11,9 +10,8 @@ import android.widget.ListView;
 
 import com.wetwo.data.model.Information;
 import com.wetwo.weshare.R;
-import com.wetwo.weshare.adapter.InfoListAdapter;
-import com.wetwo.weshare.info.presenter.IInfoPresenter;
-import com.wetwo.weshare.info.presenter.InfoPresenter;
+import com.wetwo.weshare.message.presenter.IMsgPresenter;
+import com.wetwo.weshare.message.presenter.MsgPresenter;
 
 import java.util.List;
 
@@ -25,13 +23,13 @@ import butterknife.Unbinder;
  * Created by FHZ on 2018/7/12.
  */
 
-public class InfoFragment extends Fragment implements IInfoFragment {
+public class MsgFragment extends Fragment implements IMsgFragment {
 
     @BindView(R.id.listViewInfo)
     ListView listViewInfo;
     private boolean isActive = true;
     private Unbinder unbinder;
-    private IInfoPresenter infoPresenter;
+    private IMsgPresenter infoPresenter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,7 +39,7 @@ public class InfoFragment extends Fragment implements IInfoFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_info, container, false);
+        View view = inflater.inflate(R.layout.fragment_msg, container, false);
         unbinder = ButterKnife.bind(this, view);
         init();
         isActive = true;
@@ -49,7 +47,7 @@ public class InfoFragment extends Fragment implements IInfoFragment {
     }
 
     private void init() {
-        infoPresenter=new InfoPresenter(this);
+        infoPresenter=new MsgPresenter(this);
         infoPresenter.loadData();
     }
 

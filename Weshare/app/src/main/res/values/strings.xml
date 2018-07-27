@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Weshare</string>
+    <string name="msg">消息</string>
+    <string name="circle">动态</string>
+    <string name="mine">我</string>
+    <string name="weshare">weshare</string>
 </resources>
