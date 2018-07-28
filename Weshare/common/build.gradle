@@ -30,9 +30,6 @@ dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    api 'com.android.support:appcompat-v7:27.1.1'
-    api rootProject.ext.dependencies.butterKnife
-    annotationProcessor rootProject.ext.dependencies.annotationProcessor
     api 'com.squareup.okhttp3:okhttp:3.10.0'
     api 'com.google.code.gson:gson:2.8.5'
 }

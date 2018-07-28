@@ -5,4 +5,5 @@ package com.wetwo.common;
  */
 
 public class Constant {
+    public static String reqAddr="";
 }

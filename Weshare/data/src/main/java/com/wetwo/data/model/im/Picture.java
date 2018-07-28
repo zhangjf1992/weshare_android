@@ -1,4 +1,4 @@
-package com.wetwo.data.model;
+package com.wetwo.data.model.im;
 
 public class Picture {
     private int id;

@@ -1,6 +1,7 @@
 package com.wetwo.weshare.message.view;
 
-import com.wetwo.data.model.Information;
+import com.wetwo.data.model.adpter.LatestMsg;
+import com.wetwo.data.model.im.Information;
 
 import java.util.List;
 
@@ -11,5 +12,5 @@ import java.util.List;
 public interface IMsgFragment {
     boolean isActive();
     void onDataLoaded(List<Information> informationList);
-    void update();
+    void updateAll(List<LatestMsg> latestMsgs);
 }

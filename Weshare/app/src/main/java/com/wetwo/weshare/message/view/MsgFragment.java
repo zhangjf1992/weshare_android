@@ -1,18 +1,23 @@
 package com.wetwo.weshare.message.view;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
-import com.wetwo.data.model.Information;
+import com.wetwo.data.model.adpter.LatestMsg;
+import com.wetwo.data.model.im.Information;
 import com.wetwo.weshare.R;
+import com.wetwo.weshare.adapter.LatestMsgListAdapter;
 import com.wetwo.weshare.message.presenter.IMsgPresenter;
 import com.wetwo.weshare.message.presenter.MsgPresenter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -25,11 +30,13 @@ import butterknife.Unbinder;
 
 public class MsgFragment extends Fragment implements IMsgFragment {
 
-    @BindView(R.id.listViewInfo)
-    ListView listViewInfo;
+    @BindView(R.id.recyclerViewLatestMsgList)
+    RecyclerView recyclerViewLatestMsgList;
     private boolean isActive = true;
     private Unbinder unbinder;
     private IMsgPresenter infoPresenter;
+    private LatestMsgListAdapter latestMsgListAdapter;
+    private List<LatestMsg> latestMsgs=new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,19 +48,22 @@ public class MsgFragment extends Fragment implements IMsgFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_msg, container, false);
         unbinder = ButterKnife.bind(this, view);
-        init();
         isActive = true;
         return view;
     }
 
     private void init() {
-        infoPresenter=new MsgPresenter(this);
+        recyclerViewLatestMsgList.setLayoutManager(new LinearLayoutManager(getActivity()));
+        latestMsgListAdapter=new LatestMsgListAdapter(latestMsgs, getActivity());
+        recyclerViewLatestMsgList.setAdapter(latestMsgListAdapter);
+        infoPresenter = new MsgPresenter(this);
         infoPresenter.loadData();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        init();
     }
 
     @Override
@@ -67,8 +77,9 @@ public class MsgFragment extends Fragment implements IMsgFragment {
     }
 
     @Override
-    public void update() {
-
+    public void updateAll(List<LatestMsg> latestMsgs) {
+        this.latestMsgs.addAll(latestMsgs);
+        latestMsgListAdapter.notifyDataSetChanged();
     }
 
     @Override
