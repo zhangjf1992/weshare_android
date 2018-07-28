@@ -7,21 +7,21 @@ package com.wetwo.data.model.req;
 public class Login {
 
     /**
-     * 警员编号
+     * 用户名
      */
-    private String policeNum;
+    private String userName;
 
     /**
      * 密码
      */
     private String password;
 
-    public String getPoliceNum() {
-        return policeNum;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setPoliceNum(String policeNum) {
-        this.policeNum = policeNum;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -35,7 +35,7 @@ public class Login {
     @Override
     public String toString() {
         return "Login{" +
-                "policeNum='" + policeNum + '\'' +
+                "userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
