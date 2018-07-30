@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.wetwo.weshare.home.view.MainActivity">
+    tools:context="com.wetwo.weshare.ui.MainActivity">
 
     <LinearLayout
         android:id="@+id/linearLayoutTitle"
@@ -39,7 +39,7 @@
         android:background="@android:color/darker_gray"/>
 
     <FrameLayout
-        android:id="@+id/framLayoutInfo"
+        android:id="@+id/frameLayoutMsg"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">

@@ -1,4 +1,4 @@
-package com.wetwo.weshare.home.view;
+package com.wetwo.weshare.ui;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wetwo.weshare.R;
-import com.wetwo.weshare.message.view.MsgFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.imageViewSwitch)
     ImageView imageViewSwitch;
-    @BindView(R.id.framLayoutInfo)
-    FrameLayout framLayoutInfo;
+    @BindView(R.id.frameLayoutMsg)
+    FrameLayout frameLayoutInfo;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     @BindView(R.id.linearLayoutBottom)
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         fragmentManager = getFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.framLayoutInfo, new MsgFragment(), "msgFragment").commit();
+        fragmentTransaction.add(R.id.frameLayoutMsg, new MsgFragment(), "msgFragment").commit();
         setBottomSelected(textViewLatestMsg);
     }
 

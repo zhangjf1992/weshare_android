@@ -1,7 +1,6 @@
-package com.wetwo.weshare.message.view;
+package com.wetwo.weshare.ui;
 
 import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,12 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.wetwo.data.model.adpter.LatestMsg;
-import com.wetwo.data.model.im.Information;
+import com.wetwo.data.model.adpter.Moment;
 import com.wetwo.weshare.R;
-import com.wetwo.weshare.adapter.LatestMsgListAdapter;
-import com.wetwo.weshare.message.presenter.IMsgPresenter;
-import com.wetwo.weshare.message.presenter.MsgPresenter;
+import com.wetwo.weshare.adapter.LatestMsgRecyclerViewAdapter;
+import com.wetwo.weshare.adapter.MomentsRecyclerViewAdapter;
+import com.wetwo.weshare.presenter.ICirclePresenter;
+import com.wetwo.weshare.presenter.impl.CirclePresenter;
+import com.wetwo.weshare.ui.view.ICircleFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,15 +28,15 @@ import butterknife.Unbinder;
  * Created by FHZ on 2018/7/12.
  */
 
-public class MsgFragment extends Fragment implements IMsgFragment {
+public class CircleFragment extends Fragment implements ICircleFragment{
 
     @BindView(R.id.recyclerViewLatestMsgList)
     RecyclerView recyclerViewLatestMsgList;
     private boolean isActive = true;
     private Unbinder unbinder;
-    private IMsgPresenter infoPresenter;
-    private LatestMsgListAdapter latestMsgListAdapter;
-    private List<LatestMsg> latestMsgs=new ArrayList<>();
+    private ICirclePresenter circlePresenter;
+    MomentsRecyclerViewAdapter momentsRecyclerViewAdapter;
+    List<Moment> moments=new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,10 +54,10 @@ public class MsgFragment extends Fragment implements IMsgFragment {
 
     private void init() {
         recyclerViewLatestMsgList.setLayoutManager(new LinearLayoutManager(getActivity()));
-        latestMsgListAdapter=new LatestMsgListAdapter(latestMsgs, getActivity());
-        recyclerViewLatestMsgList.setAdapter(latestMsgListAdapter);
-        infoPresenter = new MsgPresenter(this);
-        infoPresenter.loadData();
+        momentsRecyclerViewAdapter=new MomentsRecyclerViewAdapter(moments, getActivity());
+        recyclerViewLatestMsgList.setAdapter(momentsRecyclerViewAdapter);
+        circlePresenter = new CirclePresenter(this);
+        circlePresenter.loadData();
     }
 
     @Override
@@ -71,15 +71,11 @@ public class MsgFragment extends Fragment implements IMsgFragment {
         return isActive;
     }
 
-    @Override
-    public void onDataLoaded(List<Information> informationList) {
-
-    }
 
     @Override
-    public void updateAll(List<LatestMsg> latestMsgs) {
-        this.latestMsgs.addAll(latestMsgs);
-        latestMsgListAdapter.notifyDataSetChanged();
+    public void updateAll(List<Moment> moments) {
+        this.moments.addAll(moments);
+        momentsRecyclerViewAdapter.notifyDataSetChanged();
     }
 
     @Override

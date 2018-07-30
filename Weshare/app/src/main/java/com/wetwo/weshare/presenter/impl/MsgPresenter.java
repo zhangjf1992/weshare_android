@@ -1,10 +1,8 @@
-package com.wetwo.weshare.message.presenter;
-
-import android.content.res.Resources;
+package com.wetwo.weshare.presenter.impl;
 
 import com.wetwo.data.model.adpter.LatestMsg;
-import com.wetwo.weshare.R;
-import com.wetwo.weshare.message.view.IMsgFragment;
+import com.wetwo.weshare.ui.view.IMsgFragment;
+import com.wetwo.weshare.presenter.IMsgPresenter;
 
 import java.util.ArrayList;
 import java.util.List;

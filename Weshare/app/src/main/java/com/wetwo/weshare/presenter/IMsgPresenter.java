@@ -1,4 +1,4 @@
-package com.wetwo.weshare.message.presenter;
+package com.wetwo.weshare.presenter;
 
 /**
  * Created by FHZ on 2018/7/12.

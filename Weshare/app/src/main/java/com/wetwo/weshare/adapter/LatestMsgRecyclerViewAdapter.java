@@ -22,12 +22,12 @@ import butterknife.ButterKnife;
  * Created by FHZ on 2018/7/13.
  */
 
-public class LatestMsgListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class LatestMsgRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<LatestMsg> latestMsgs;
     private Context context;
 
-    public LatestMsgListAdapter(List<LatestMsg> latestMsgs, Context context) {
+    public LatestMsgRecyclerViewAdapter(List<LatestMsg> latestMsgs, Context context) {
         this.latestMsgs = latestMsgs;
         this.context = context;
     }
