@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.wetwo.data.model.adpter.LatestMsg;
 import com.wetwo.data.model.adpter.Moment;
 import com.wetwo.weshare.R;
 
@@ -26,6 +25,9 @@ public class MomentsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
 
     private List<Moment> moments;
     private Context context;
+    final public static int MOMENT_HOLDER_ONE_PICTURE_TYPE = 0;
+    final public static int MOMENT_HOLDER_MORE_PICTURE_TYPE = 1;
+    final public static int MOMENT_HOLDER_VIDEO_TYPE = 2;
 
     public MomentsRecyclerViewAdapter(List<Moment> moments, Context context) {
         this.moments = moments;
@@ -36,8 +38,14 @@ public class MomentsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder viewHolder = null;
-        if (viewType == 0) {
-            viewHolder = new MomentsHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_latest_msg, parent, false));
+        switch (viewType) {
+            case MOMENT_HOLDER_ONE_PICTURE_TYPE:
+                viewHolder = new OnePictureHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_moments_one_picture, parent, false));
+                break;
+            case MOMENT_HOLDER_MORE_PICTURE_TYPE:
+            case MOMENT_HOLDER_VIDEO_TYPE:
+                viewHolder = new MorePictureHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_moments_more_picture, parent, false));
+                break;
         }
         return viewHolder;
     }
@@ -45,9 +53,11 @@ public class MomentsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         switch (holder.getItemViewType()) {
-            case 0:
-                MomentsHolder latestMsgHolder = (MomentsHolder) holder;
-//                Glide.with(context).load(latestMsgs.get(position).getHeadImageUrl()).into(latestMsgHolder.imageViewHeadImage);
+            case MOMENT_HOLDER_ONE_PICTURE_TYPE:
+                OnePictureHolder onePictureHolder = (OnePictureHolder) holder;
+                onePictureHolder.textViewNickName.setText(moments.get(position).getNickName());
+                onePictureHolder.textViewText.setText(moments.get(position).getText());
+                onePictureHolder.textViewTime.setText(moments.get(position).getTime());
                 break;
         }
     }
@@ -59,12 +69,35 @@ public class MomentsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
 
     @Override
     public int getItemViewType(int position) {
-        return 0;
+        return moments.get(position).getType();
     }
 
-    class MomentsHolder extends RecyclerView.ViewHolder {
-        public MomentsHolder(View itemView) {
+    class OnePictureHolder extends RecyclerView.ViewHolder {
+
+        @BindView(R.id.imageViewHeadImage)
+        ImageView imageViewHeadImage;
+        @BindView(R.id.textViewNickName)
+        TextView textViewNickName;
+        @BindView(R.id.textViewText)
+        TextView textViewText;
+        @BindView(R.id.imageViewPicture)
+        ImageView imageViewPicture;
+        @BindView(R.id.imageViewPause)
+        ImageView imageViewPause;
+        @BindView(R.id.textViewTime)
+        TextView textViewTime;
+
+        public OnePictureHolder(View itemView) {
             super(itemView);
+            ButterKnife.bind(this, itemView);
+        }
+    }
+
+    class MorePictureHolder extends RecyclerView.ViewHolder {
+
+        public MorePictureHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

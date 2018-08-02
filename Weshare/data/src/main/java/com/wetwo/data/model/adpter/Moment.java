@@ -13,6 +13,7 @@ public class Moment {
     private List<String> imageUrls;
     private String videoUrls;
     private String time;
+    private int type;
 
     public String getHeadImageUrl() {
         return headImageUrl;
@@ -62,6 +63,14 @@ public class Moment {
         this.time = time;
     }
 
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
         return "Moment{" +
@@ -71,6 +80,7 @@ public class Moment {
                 ", imageUrls=" + imageUrls +
                 ", videoUrls='" + videoUrls + '\'' +
                 ", time='" + time + '\'' +
+                ", type=" + type +
                 '}';
     }
 }
