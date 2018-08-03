@@ -1,7 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewHeadImage"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@mipmap/gorgeous" />
+
+    <TextView
+        android:id="@+id/textViewNickName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imageViewHeadImage"
+        android:layout_alignTop="@id/imageViewHeadImage"
+        android:layout_toEndOf="@id/imageViewHeadImage"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:text="泪殇_陌小薰"
+        android:textColor="#000"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/textViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewNickName"
+        android:layout_toRightOf="@id/imageViewHeadImage"
+        android:layout_toEndOf="@id/imageViewHeadImage"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:text="今天去了一家非常棒的游泳！"/>
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/gridLayoutPictures"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_below="@id/textViewText"
+        android:layout_toRightOf="@id/imageViewHeadImage"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        app:columnCount="3">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:src="@mipmap/gorgeous"/>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:src="@mipmap/gorgeous"/>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="5dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:src="@mipmap/gorgeous"/>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:src="@mipmap/gorgeous"/>
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:src="@mipmap/gorgeous"/>
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="5dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:src="@mipmap/gorgeous"/>
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="5dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:src="@mipmap/gorgeous"/>
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="5dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:src="@mipmap/gorgeous"/>
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:src="@mipmap/gorgeous"/>
+
+    </android.support.v7.widget.GridLayout>
+
+    <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gridLayoutPictures"
+        android:layout_toRightOf="@+id/imageViewHeadImage"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5sp"
+        android:text="9:40"
+        android:textSize="12sp"/>
 
 </RelativeLayout>
