@@ -8,10 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.wetwo.data.model.adpter.Moment;
 import com.wetwo.weshare.R;
-import com.wetwo.weshare.adapter.LatestMsgRecyclerViewAdapter;
 import com.wetwo.weshare.adapter.MomentsRecyclerViewAdapter;
 import com.wetwo.weshare.presenter.ICirclePresenter;
 import com.wetwo.weshare.presenter.impl.CirclePresenter;
@@ -28,15 +28,15 @@ import butterknife.Unbinder;
  * Created by FHZ on 2018/7/12.
  */
 
-public class CircleFragment extends Fragment implements ICircleFragment{
+public class CircleFragment extends Fragment implements ICircleFragment {
 
-    @BindView(R.id.recyclerViewLatestMsgList)
-    RecyclerView recyclerViewLatestMsgList;
+    @BindView(R.id.recyclerViewMoments)
+    RecyclerView recyclerViewMoments;
     private boolean isActive = true;
     private Unbinder unbinder;
     private ICirclePresenter circlePresenter;
     MomentsRecyclerViewAdapter momentsRecyclerViewAdapter;
-    List<Moment> moments=new ArrayList<>();
+    List<Moment> moments = new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,16 +46,16 @@ public class CircleFragment extends Fragment implements ICircleFragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_msg, container, false);
+        View view = inflater.inflate(R.layout.fragment_circle, container, false);
         unbinder = ButterKnife.bind(this, view);
         isActive = true;
         return view;
     }
 
     private void init() {
-        recyclerViewLatestMsgList.setLayoutManager(new LinearLayoutManager(getActivity()));
-        momentsRecyclerViewAdapter=new MomentsRecyclerViewAdapter(moments, getActivity());
-        recyclerViewLatestMsgList.setAdapter(momentsRecyclerViewAdapter);
+        recyclerViewMoments.setLayoutManager(new LinearLayoutManager(getActivity()));
+        momentsRecyclerViewAdapter = new MomentsRecyclerViewAdapter(moments, getActivity());
+        recyclerViewMoments.setAdapter(momentsRecyclerViewAdapter);
         circlePresenter = new CirclePresenter(this);
         circlePresenter.loadData();
     }

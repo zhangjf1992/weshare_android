@@ -1,4 +1,4 @@
-package com.wetwo.common.utils;
+package com.wetwo.common.util;
 
 import android.app.Activity;
 import android.content.SharedPreferences;

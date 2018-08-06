@@ -24,12 +24,13 @@
             android:textSize="18sp" />
 
         <ImageView
-            android:id="@+id/imageViewSwitch"
+            android:id="@+id/imageViewAdd"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@mipmap/switcher"
+            android:src="@mipmap/add"
             android:layout_gravity="center"
-            android:paddingRight="20dp" />
+            android:paddingRight="20dp"
+            android:paddingLeft="10dp"/>
 
     </LinearLayout>
 

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/imageViewHeadImage"
@@ -10,7 +10,7 @@
         android:layout_height="45dp"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp"
         android:src="@mipmap/gorgeous" />
 
@@ -37,7 +37,7 @@
         android:layout_toRightOf="@id/imageViewHeadImage"
         android:layout_toEndOf="@id/imageViewHeadImage"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="20dp"
         android:text="今天去了一家非常棒的游泳馆！" />
 
@@ -69,8 +69,15 @@
         android:layout_below="@id/imageViewPicture"
         android:layout_toRightOf="@+id/imageViewHeadImage"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="5sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp"
         android:text="9:40"
         android:textSize="12sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ddd"/>
 
 </RelativeLayout>

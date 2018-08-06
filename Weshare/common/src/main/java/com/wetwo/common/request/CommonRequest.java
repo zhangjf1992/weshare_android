@@ -1,7 +1,7 @@
 package com.wetwo.common.request;
 
 import com.wetwo.common.Constant;
-import com.wetwo.common.utils.Bean2ParamUtils;
+import com.wetwo.common.util.Bean2ParamUtils;
 
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;

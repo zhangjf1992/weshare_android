@@ -1,4 +1,4 @@
-package com.wetwo.common.utils;
+package com.wetwo.common.util;
 
 
 import com.wetwo.common.Constant;

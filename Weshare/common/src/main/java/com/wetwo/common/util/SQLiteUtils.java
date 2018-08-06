@@ -1,4 +1,4 @@
-package com.wetwo.common.utils;
+package com.wetwo.common.util;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
