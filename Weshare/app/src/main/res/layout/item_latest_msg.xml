@@ -8,61 +8,61 @@
         android:id="@+id/imageViewHeadImage"
         android:layout_width="45dp"
         android:layout_height="45dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         android:src="@mipmap/gorgeous" />
 
     <TextView
         android:id="@+id/textViewNickName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/imageViewHeadImage"
         android:layout_alignTop="@id/imageViewHeadImage"
-        android:layout_toEndOf="@id/imageViewHeadImage"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:singleLine="true"
+        android:layout_toEndOf="@id/imageViewHeadImage"
+        android:layout_toRightOf="@id/imageViewHeadImage"
         android:ellipsize="end"
+        android:singleLine="true"
         android:text="泪殇_陌小薰"
         android:textColor="#000"
-        android:textSize="15sp"/>
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/textViewLatestMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewNickName"
-        android:layout_toRightOf="@id/imageViewHeadImage"
-        android:layout_toLeftOf="@id/textViewTime"
-        android:layout_toEndOf="@id/imageViewHeadImage"
-        android:layout_toStartOf="@id/textViewTime"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:singleLine="true"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/imageViewHeadImage"
+        android:layout_toLeftOf="@id/textViewTime"
+        android:layout_toRightOf="@id/imageViewHeadImage"
+        android:layout_toStartOf="@id/textViewTime"
         android:ellipsize="end"
+        android:singleLine="true"
         android:text="帅哥，加我！！！！！！！！！！！！！！！！！！！！！！！！！！"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/textViewTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/imageViewHeadImage"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/imageViewHeadImage"
+        android:layout_marginEnd="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:text="9:40"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
         android:layout_alignParentBottom="true"
-        android:background="#ddd"/>
+        android:background="#ddd" />
 
 </RelativeLayout>

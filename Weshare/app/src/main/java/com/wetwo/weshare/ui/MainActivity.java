@@ -18,8 +18,8 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.frameLayoutMsg)
-    FrameLayout frameLayoutInfo;
+    @BindView(R.id.frameLayout)
+    FrameLayout frameLayout;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     @BindView(R.id.linearLayoutBottom)
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textViewPersonal;
     @BindView(R.id.imageViewAdd)
     ImageView imageViewAdd;
-    private String[] fragmentTags = {MsgFragment.class.getSimpleName(), CircleFragment.class.getSimpleName()};
+    private String[] fragmentTags = {MsgFragment.class.getSimpleName(), CircleFragment.class.getSimpleName(),MineFragment.class.getSimpleName()};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +45,9 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         fragmentManager = getFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.frameLayoutMsg, new CircleFragment(), fragmentTags[1])
-                .add(R.id.frameLayoutMsg, new MsgFragment(), fragmentTags[0]).commit();
+        fragmentTransaction.add(R.id.frameLayout,new MineFragment(),fragmentTags[2])
+                .add(R.id.frameLayout, new CircleFragment(), fragmentTags[1])
+                .add(R.id.frameLayout, new MsgFragment(), fragmentTags[0]).commit();
         setBottomSelected(textViewLatestMsg);
     }
 
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 setBottomSelected(textViewCircle);
                 break;
             case R.id.textViewPersonal:
+                selectFragment(fragmentTags[2]);
                 setBottomSelected(textViewPersonal);
                 break;
         }

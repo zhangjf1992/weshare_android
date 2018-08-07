@@ -15,11 +15,11 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="@string/weshare"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
             android:textColor="#ffffff"
             android:textSize="18sp" />
 
@@ -27,33 +27,33 @@
             android:id="@+id/imageViewAdd"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@mipmap/add"
             android:layout_gravity="center"
+            android:paddingLeft="10dp"
             android:paddingRight="20dp"
-            android:paddingLeft="10dp"/>
+            android:src="@mipmap/add" />
 
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.01dp"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/darker_gray" />
 
     <FrameLayout
-        android:id="@+id/frameLayoutMsg"
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
     </FrameLayout>
-    
+
     <LinearLayout
         android:id="@+id/linearLayoutBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
+        android:background="#4EA958"
         android:paddingBottom="5dp"
-        android:background="#4EA958">
+        android:paddingTop="5dp">
 
         <TextView
             android:id="@+id/textViewLatestMsg"
@@ -61,12 +61,12 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:clickable="true"
-            android:focusable="true"
             android:drawableTop="@drawable/bottom_msg_selector"
+            android:focusable="true"
             android:gravity="center"
             android:text="@string/msg"
             android:textColor="@color/bottom_text_selector"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textViewCircle"
@@ -74,12 +74,12 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:clickable="true"
-            android:focusable="true"
             android:drawableTop="@drawable/bottom_circle_selector"
+            android:focusable="true"
             android:gravity="center"
             android:text="@string/circle"
             android:textColor="@color/bottom_text_selector"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textViewPersonal"
@@ -87,12 +87,12 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:clickable="true"
-            android:focusable="true"
             android:drawableTop="@drawable/bottom_personal_selector"
+            android:focusable="true"
             android:gravity="center"
             android:text="@string/mine"
             android:textColor="@color/bottom_text_selector"
-            android:textSize="12sp"/>
+            android:textSize="12sp" />
 
     </LinearLayout>
 
