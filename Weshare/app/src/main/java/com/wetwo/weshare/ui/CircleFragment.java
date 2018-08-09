@@ -67,6 +67,11 @@ public class CircleFragment extends Fragment implements ICircleFragment {
     }
 
     @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+    }
+
+    @Override
     public boolean isActive() {
         return isActive;
     }
